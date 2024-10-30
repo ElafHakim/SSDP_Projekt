@@ -38,26 +38,6 @@ public class ListenThread implements Runnable {
 	@Override
 	public void run() {
 
-
-
-// 		try {
-
-// 			/**ein neues MulticastSocket erstllen, um sicherzustellen, dass der Thread seine eigene
-//  *  Instanz des Sockets hat, die unabhängig von der Instanz, die im Konstruktor (Listen) erstellt wurde 
-//  * Wenn mehrere Threads gleichzeitig auf denselben Socket zugreifen, könnte dies zu Problemen führen.
-//  * Durch die Verwendung eines eigenen Sockets in der run-Methode wird die Thread-Sicherheit verbessert.*/
-// 			this.multicastSocket = new MulticastSocket(port);
-
-
-// 			InetAddress group = InetAddress.getByName("239.255.255.250");
-// 			multicastSock = new MulticastSocket(1900);
-// 			multicastSock.joinGroup(group);
-
-// 		} catch (IOException e) {
-
-// 			e.printStackTrace();
-// 		}
-
 		while (!this.multicastSocket.isClosed()) { // Solange der Socket nicht geschlossen ist
 
 
