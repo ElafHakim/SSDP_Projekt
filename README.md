@@ -5,8 +5,9 @@ Hierfür empfiehlt es sich 3 Threads zu nutzen:
 1.Der Listen-Thread, um Datagramm zu empfangen
 2.Der Worker-Thread, um die Empfangenen Datagramme zu verarbeiten
 3.Der User-Thread, um Eingaben des Nutzers zu lesen und entsprechende Aktionen durchzuführen
+
 1 Listen-Thread
- Zusammengefasst soll dieser Thread ein MulticastSocket auf Port 1900 öffnen, der Multicast-Gruppe „239.255.255.250“ beitreten und bis zum Programmende endlos Datagramme 
+Zusammengefasst soll dieser Thread ein MulticastSocket auf Port 1900 öffnen, der Multicast-Gruppe „239.255.255.250“ beitreten und bis zum Programmende endlos Datagramme 
 empfangen und dem Worker-Thread zur Verfügung stellen.
 Ein MulticastSocket wird wie ein DatagramSocket geöffnet. Um einer Multicast-Gruppe beizutreten bietet ein MulticastSocket die Methode joinGroup(InetAddress) an.
 Eine InetAddress wird nicht wie normale Objekte initialisiert, stattdessen stellt die InetAddress-Klasse einige statische Methoden zum initialisieren eines solchen Objektes bereits. Für eine gegebene Adresse bietet sich hier die getByName(String)-Methode an.
